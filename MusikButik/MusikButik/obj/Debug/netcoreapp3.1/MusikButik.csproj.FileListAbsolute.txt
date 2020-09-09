@@ -1,0 +1,13 @@
+C:\Users\Danne\source\repos\MusikButik\MusikButik\bin\Debug\netcoreapp3.1\MusikButik.exe
+C:\Users\Danne\source\repos\MusikButik\MusikButik\bin\Debug\netcoreapp3.1\MusikButik.deps.json
+C:\Users\Danne\source\repos\MusikButik\MusikButik\bin\Debug\netcoreapp3.1\MusikButik.runtimeconfig.json
+C:\Users\Danne\source\repos\MusikButik\MusikButik\bin\Debug\netcoreapp3.1\MusikButik.runtimeconfig.dev.json
+C:\Users\Danne\source\repos\MusikButik\MusikButik\bin\Debug\netcoreapp3.1\MusikButik.dll
+C:\Users\Danne\source\repos\MusikButik\MusikButik\bin\Debug\netcoreapp3.1\MusikButik.pdb
+C:\Users\Danne\source\repos\MusikButik\MusikButik\obj\Debug\netcoreapp3.1\MusikButik.csprojAssemblyReference.cache
+C:\Users\Danne\source\repos\MusikButik\MusikButik\obj\Debug\netcoreapp3.1\MusikButik.AssemblyInfoInputs.cache
+C:\Users\Danne\source\repos\MusikButik\MusikButik\obj\Debug\netcoreapp3.1\MusikButik.AssemblyInfo.cs
+C:\Users\Danne\source\repos\MusikButik\MusikButik\obj\Debug\netcoreapp3.1\MusikButik.csproj.CoreCompileInputs.cache
+C:\Users\Danne\source\repos\MusikButik\MusikButik\obj\Debug\netcoreapp3.1\MusikButik.dll
+C:\Users\Danne\source\repos\MusikButik\MusikButik\obj\Debug\netcoreapp3.1\MusikButik.pdb
+C:\Users\Danne\source\repos\MusikButik\MusikButik\obj\Debug\netcoreapp3.1\MusikButik.genruntimeconfig.cache

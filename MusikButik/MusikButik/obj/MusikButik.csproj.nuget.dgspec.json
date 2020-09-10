@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Danne\\source\\repos\\MusikButik\\MusikButik\\MusikButik.csproj": {}
+    "C:\\Users\\Admin\\source\\repos\\Butikinventarie\\MusikButik\\MusikButik\\MusikButik.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Danne\\source\\repos\\MusikButik\\MusikButik\\MusikButik.csproj": {
+    "C:\\Users\\Admin\\source\\repos\\Butikinventarie\\MusikButik\\MusikButik\\MusikButik.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Danne\\source\\repos\\MusikButik\\MusikButik\\MusikButik.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\Butikinventarie\\MusikButik\\MusikButik\\MusikButik.csproj",
         "projectName": "MusikButik",
-        "projectPath": "C:\\Users\\Danne\\source\\repos\\MusikButik\\MusikButik\\MusikButik.csproj",
-        "packagesPath": "C:\\Users\\Danne\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Danne\\source\\repos\\MusikButik\\MusikButik\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\source\\repos\\Butikinventarie\\MusikButik\\MusikButik\\MusikButik.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\source\\repos\\Butikinventarie\\MusikButik\\MusikButik\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Danne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

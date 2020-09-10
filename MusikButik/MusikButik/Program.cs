@@ -8,6 +8,7 @@ namespace MusikButik
         {
             Butik myButik = new Butik();
             Inventory[] movies = new Inventory[25];
+            Music[] albums = new Music[25];
 
             Console.WriteLine("Välkommen till Hans-Johnnys butik!");
             Console.WriteLine("Fakurerings Adress: " + myButik.faktureringsAdress);
@@ -49,11 +50,51 @@ namespace MusikButik
             movies[23] = new Inventory("A Silent Voice: The Movie", "Naoko Yamada", 8.2f, 2016, "2h 10min", 100);
             movies[24] = new Inventory("Wolf Children", "Mamoru Hosoda", 8.1f, 2012, "1h 57min", 100);
 
+            Console.WriteLine();
+            Console.WriteLine("Filmer");
             for (int i = 0; i < movies.Length; i++)
             {
                 Console.WriteLine($"{movies[i].name} {movies[i].creator}  {movies[i].rating}  {movies[i].releaseDate}  {movies[i].duration}  {movies[i].price}");
             }
-            
+            /*
+        public byte[] albumRating = new byte[25] { 9, 10, 8, 9, 8, 7, 9, 6, 8, 7, 9, 8, 8, 7, 8, 6, 10, 8, 8, 9, 8, 8, 7, 7, 8 };
+        public int[] albumreleaseDate = new int[25] { 2020, 2019, 2020, 2019, 2017, 2006, 2017, 2019, 2020, 2018, 2018, 2018, 2019, 2017, 2017, 2016, 2017, 2004, 2019, 2018, 2013, 2016, 1999, 2020, 2010 };
+        public int[] albumLength = new int[25] {    //23, 55, 50, 44, 34, 41, 66, 53, 21, 38 };
+        public int[] numberOfSongs = new int[25] { 14, 12, 10, 11, 12, 12, 16, 11, 13, 12, 11, 10, 11, 12, 12, 7, 13, 12, 10, 11, 12, 17, 12, 7, 10 };
+        public int[] albumPrice = new int[25] { 100, 199, 100, 200, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
+        */
+            albums[0] = new Music("I disagree", "Poppy", 0f, 2020, "45min", 100, 14);
+            albums[1] = new Music("TIM", "Avicii", 0f, 2019, "38min", 100, 12);
+            albums[2] = new Music("Dreamers", "JUNG", 0f, 2020, "33min", 100, 10);
+            albums[3] = new Music("Doom Days", "Bastille", 0f, 2019, "40min", 100, 11);
+            albums[4] = new Music("Väntar på en ängel", "Oskar Linnros", 0f, 2017, "39min", 100, 12);
+            albums[5] = new Music("Är", "Snook", 0f, 2006, "41min", 100, 12);
+            albums[6] = new Music("÷(Deluxe)", "Ed Sheeran", 0f, 2019, "59min", 100, 16);
+            albums[7] = new Music("The Butterfly Effect", "Vargas & Lagola", 0f, 2019, "31min", 100, 11);
+            albums[8] = new Music("CALM", "5 Seconds of Summer", 0f, 2019, "43min", 100, 13);
+            albums[9] = new Music("Night & Day (Day Edition - Extra Tracks", "The Vamps", 0f, 2019, "41min", 100, 12);
+            albums[10] = new Music("IRL", "HUMAN", 0f, 2019, "38min", 100, 11);
+            albums[11] = new Music("Prequelle", "Ghost", 0f, 2019, "41min", 100, 10);
+            albums[12] = new Music("RAMMSTEIN", "Rammstein", 0f, 2019, "46min", 100, 11);
+            albums[13] = new Music("Gone Now", "Bleachers", 0f, 2019, "40min", 100, 12);
+            albums[14] = new Music("Evolve", "Imgine Dragons", 0f, 2019, "43min", 100, 12);
+            albums[15] = new Music("Morgna Sulele", "Morgna Sulele", 0f, 2019, "23min", 100, 7);
+            albums[16] = new Music("What If Nothing", "WALK THE MOON", 0f, 2019, "55min", 100, 13);
+            albums[17] = new Music("COWBOY BEBOP Tank! The! best!", "SEATBELTS", 0f, 2019, "50min", 100, 12);
+            albums[18] = new Music("You Are OK", "The Maine", 0f, 2019, "44min", 100, 10);
+            albums[19] = new Music("Pray For The Wicked", "Panic! At The Disco", 0f, 2019, "34min", 100, 11);
+            albums[20] = new Music("AM", "Arctic Monkeys", 0f, 2019, "41min", 100, 12);
+            albums[21] = new Music("Seal The Deal & Let's Boogie (Deluxe)", "Volbeat", 0f, 2019, "1h 6min", 100, 17);
+            albums[22] = new Music("Affirmation", "Savage Garden", 0f, 2019, "53min", 100, 12);
+            albums[23] = new Music("OMG What's Happening", "Ava Max", 0f, 2019, "21min", 100, 7);
+            albums[24] = new Music("Svart, vitt och allt därimellan", "Daniel Adams-Ray", 0f, 2019, "38min", 100, 10);
+
+            Console.WriteLine();
+            Console.WriteLine("Album");
+            for (int i = 0; i < albums.Length; i++)
+            {
+                Console.WriteLine($"{albums[i].name} {albums[i].creator} {albums[i].rating} {albums[i].releaseDate} {albums[i].duration} {albums[i].price} {albums[i].numberOfSongs}");
+            }
         }
     }
 }

@@ -5,20 +5,20 @@ using System.Text;
 
 namespace MusikButik
 {
-    public class AlbumSongs
+    public class AlbumSongs : Music
     {
          //Inventory myInventory = new Inventory();
-         string songName;
-         string songLength;
-         string featArtists;
+         public string songName;
+         public string songLength;
+         public string featArtists;
 
-        AlbumSongs(string _songName, string _songLength)
+        public AlbumSongs(string _name, string _creator, float _rating, int _releaseDate, string _duration, int _price, byte _numberOfSongs, string _songName, string _songLength) : base (_name, _creator, _rating, _releaseDate, _duration, _price, _numberOfSongs)
         {
             songName = _songName;
             songLength = _songLength;
             featArtists = null;
         }
-        AlbumSongs(string _songName, string _songLength, string _featArtists)
+        public AlbumSongs(string _name, string _creator, float _rating, int _releaseDate, string _duration, int _price, byte _numberOfSongs, string _songName, string _songLength, string _featArtists) : base(_name, _creator, _rating, _releaseDate, _duration, _price, _numberOfSongs)
         {
             songName = _songName;
             songLength = _songLength;

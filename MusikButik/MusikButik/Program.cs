@@ -14,16 +14,8 @@ namespace MusikButik
             Console.WriteLine("Fakurerings Adress: " + myButik.faktureringsAdress);
             Console.WriteLine("Besöks Adress: " + myButik.besöksAdress);
             Console.WriteLine();
-            //myInventory.MusicAlbums(); 
-            /*
-            for (int i = 0; i < 2; i++)
-            {
-                Console.WriteLine("Album: " + myInventory.albumName[i] + " Artist: " + myInventory.artist[i] + " Album Rating: " + myInventory.albumRating[i]);
-                // Console.WriteLine($"Songs: {myAlbum.");
-            }
-            myAlbum.Songs();
-            */
 
+            #region Filmer
             movies[0] = new Inventory("Parasite", "Bong Joon Ho", 8.6f, 2019, "2h 12min", 100);
             movies[1] = new Inventory("Knives Out", "Rian Johnson", 7.9f, 2019, "2h 10min", 100);
             movies[2] = new Inventory("Joker", "Todd Phillips", 8.5f, 2019, "2h 2min", 100);
@@ -49,7 +41,7 @@ namespace MusikButik
             movies[22] = new Inventory("Your Name.", "Makoto Shinkai", 8.4f, 2016, "1h 46min", 100);
             movies[23] = new Inventory("A Silent Voice: The Movie", "Naoko Yamada", 8.2f, 2016, "2h 10min", 100);
             movies[24] = new Inventory("Wolf Children", "Mamoru Hosoda", 8.1f, 2012, "1h 57min", 100);
-
+            #endregion
             Console.WriteLine();
             Console.WriteLine("Filmer");
             for (int i = 0; i < movies.Length; i++)
@@ -63,6 +55,7 @@ namespace MusikButik
         public int[] numberOfSongs = new int[25] { 14, 12, 10, 11, 12, 12, 16, 11, 13, 12, 11, 10, 11, 12, 12, 7, 13, 12, 10, 11, 12, 17, 12, 7, 10 };
         public int[] albumPrice = new int[25] { 100, 199, 100, 200, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
         */
+            #region Album
             albums[0] = new Music("I disagree", "Poppy", 0f, 2020, "45min", 100, 14);
             albums[1] = new Music("TIM", "Avicii", 0f, 2019, "38min", 100, 12);
             albums[2] = new Music("Dreamers", "JUNG", 0f, 2020, "33min", 100, 10);
@@ -88,7 +81,7 @@ namespace MusikButik
             albums[22] = new Music("Affirmation", "Savage Garden", 0f, 2019, "53min", 100, 12);
             albums[23] = new Music("OMG What's Happening", "Ava Max", 0f, 2019, "21min", 100, 7);
             albums[24] = new Music("Svart, vitt och allt därimellan", "Daniel Adams-Ray", 0f, 2019, "38min", 100, 10);
-
+            #endregion
             Console.WriteLine();
             Console.WriteLine("Album");
             for (int i = 0; i < albums.Length; i++)

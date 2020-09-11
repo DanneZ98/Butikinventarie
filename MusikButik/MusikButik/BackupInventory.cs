@@ -14,10 +14,9 @@ namespace MusikButik
         public int[] albumLength = new int[25] { 45, 38, 33, 79, 39, 41, 59, 31, 43, 41, 38, 41, 46, 40, 43, 23, 55, 50, 44, 34, 41, 66, 53, 21, 38 };
         public int[] numberOfSongs = new int[25] { 14, 12, 10, 22, 12, 12, 16, 11, 13, 12, 11, 10, 11, 12, 12, 7, 13, 12, 10, 11, 12, 17, 12, 7, 10 };
         public int[] albumPrice = new int[25] { 100, 199, 100, 200, 100, 100, 100, 100, 100, 100 ,100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
-        public AlbumSongs[] songs = new AlbumSongs[2];
+        public Songs[] songs = new Songs[2];
         public void MusicAlbums()
         {
-            
             
         }
         public void Movies()
@@ -28,8 +27,5 @@ namespace MusikButik
             string[] movieReleaseDate = new string[25];
             int[] moviePrice = new int[25];
         }
-      
-        
-        
     }
 }

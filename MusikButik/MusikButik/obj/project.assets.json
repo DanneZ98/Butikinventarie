@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\Danne\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\Butikinventarie\\MusikButik\\MusikButik\\MusikButik.csproj",
+      "projectUniqueName": "C:\\Users\\Danne\\Source\\Repos\\Butik\\MusikButik\\MusikButik\\MusikButik.csproj",
       "projectName": "MusikButik",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\Butikinventarie\\MusikButik\\MusikButik\\MusikButik.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\Butikinventarie\\MusikButik\\MusikButik\\obj\\",
+      "projectPath": "C:\\Users\\Danne\\Source\\Repos\\Butik\\MusikButik\\MusikButik\\MusikButik.csproj",
+      "packagesPath": "C:\\Users\\Danne\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Danne\\Source\\Repos\\Butik\\MusikButik\\MusikButik\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Danne\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

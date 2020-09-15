@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MusikButik
 {
-    class Songs
+    class Songs : IComparable
     {
         public string songName;
         public string songLength;
@@ -23,6 +23,11 @@ namespace MusikButik
             songName = _songName;
             songLength = _songLength;
             featArtists = _featArtists;
+        }
+
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
         }
 
         public void PrintSongs()

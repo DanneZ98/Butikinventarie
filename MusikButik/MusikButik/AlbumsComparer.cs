@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Text;
 
 namespace MusikButik
 {
     class AlbumComparer : IComparer<Albums>
     {
+        // Jämför rating med varandra och sorterar listan efter högsta ratingen
         public int Compare([AllowNull] Albums x, [AllowNull] Albums y)
         {
-            //Enkelt sätt att använda underliggande egenskap
-            //return x.ProductName.CompareTo(y.ProductName);
 
             if (x == null && y == null) return 0;
             if (x == null) return 1;

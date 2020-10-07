@@ -7,41 +7,10 @@ namespace MusikButik
     {
         static void Main(string[] args)
         {
+            // Variables
             Butik myButik = new Butik();
-            Movies[] movies = new Movies[25];
-            Albums[] albums = new Albums[25];
-
-            Console.WriteLine("Välkommen till Hans-Johnnys butik!");
-            myButik.PrintAdress();
-            Console.WriteLine();
-
-            #region Filmer Array
-            movies[0] = new Movies("Parasite", "Bong Joon Ho", 8.6f, 2019, "2h 12min", 100);
-            movies[1] = new Movies("Knives Out", "Rian Johnson", 7.9f, 2019, "2h 10min", 100);
-            movies[2] = new Movies("Joker", "Todd Phillips", 8.5f, 2019, "2h 2min", 100);
-            movies[3] = new Movies("Avengers: Endgame", "Anthony Russo, Joe Russo", 8.4f, 2019, "3h 1min", 100);
-            movies[4] = new Movies("Avengers: Infinity War", "Anthony Russo, Joe Russo", 8.4f, 2018, "2h 29min", 100);
-            movies[5] = new Movies("The Dark Knight", "Christopher Nolan", 9.0f, 2008, "2h 32min", 100);
-            movies[6] = new Movies("The Dark Knight Rises", "Christopher Nolan", 8.4f, 2012, "2h 44min", 100);
-            movies[7] = new Movies("Jojo Rabbit", "Taika Waititi", 7.9f, 2019, "1h 48min ", 100);
-            movies[8] = new Movies("The Prestige", "Christopher Nolan", 8.5f, 2006, "2h 10min ", 100);
-            movies[9] = new Movies("The Wolf of Wall Street", "Martin Scorsese", 8.2f, 2013, "3h 0min", 100);
-            movies[10] = new Movies("The Shawshank Redemption", "Frank Darabont", 9.3f, 1994, "2h 22min", 100);
-            movies[11] = new Movies("Dunkirk", "Christopher Nolan", 7.9f, 2017, "1h 46min", 100);
-            movies[12] = new Movies("The Lighthouse", "Robert Eggers", 7.5f, 2019, "1h 49min", 100);
-            movies[13] = new Movies("The Greatest Showman", "Michael Gracey", 7.6f, 2017, "1h 45min", 100);
-            movies[14] = new Movies("Gods of Egypt", "Alex Proyas", 5.4f, 2016, "2h 7min", 100);
-            movies[15] = new Movies("The Lord of the Rings: The Fellowship of the Ring", "Peter Jackson", 8.8f, 2001, "2h 58min", 100);
-            movies[16] = new Movies("The Lord of the Rings: The Two Towers", "Peter Jackson", 8.7f, 2002, "2h 59min", 100);
-            movies[17] = new Movies("The Lord of the Rings: The Return of the King", "Peter Jackson", 8.9f, 2003, "3h 21min", 100);
-            movies[18] = new Movies("Fight Club", "David Fincher", 8.8f, 1999, "2h 19min", 100);
-            movies[19] = new Movies("Forrest Gump", "Robert Zemeckis", 8.8f, 1994, "2h 22min", 100);
-            movies[20] = new Movies("Inception", "Christopher Nolan", 8.8f, 2010, "2h 28min", 100);
-            movies[21] = new Movies("Catch Me If You Can", "Steven Spielberg", 8.1f, 2002, "2h 21min", 100);
-            movies[22] = new Movies("Your Name.", "Makoto Shinkai", 8.4f, 2016, "1h 46min", 100);
-            movies[23] = new Movies("A Silent Voice: The Movie", "Naoko Yamada", 8.2f, 2016, "2h 10min", 100);
-            movies[24] = new Movies("Wolf Children", "Mamoru Hosoda", 8.1f, 2012, "1h 57min", 100);
-            #endregion
+            bool menuRun = true;
+            // Lista med filmer
             #region Movie List
             List<Movies> moviesList = new List<Movies>();
             moviesList.Add(new Movies("Parasite", "Bong Joon Ho", 8.6f, 2019, "2h 12min", 100));
@@ -70,112 +39,12 @@ namespace MusikButik
             moviesList.Add(new Movies("A Silent Voice: The Movie", "Naoko Yamada", 8.2f, 2016, "2h 10min", 100));
             moviesList.Add(new Movies("Wolf Children", "Mamoru Hosoda", 8.1f, 2012, "1h 57min", 100));
             #endregion
-            string movieName = "Title";
-            string movieDirector = "Director";
-            string movieRating = "Rating";
-            string movieRelease = "Release";
-            string movieDuration = "Duration";
-            string moviePrice = "Price";
-            string albumNrSongs = "Number of Songs";
-            string albumArtist = "Artist";
-
-            Console.WriteLine();
-            Console.WriteLine("Movies");
-            Console.WriteLine("-------");
-            Console.WriteLine($"{movieName.PadRight(50, ' ')} {movieDirector.PadRight(30, ' ')} {movieRating}   {movieRelease}   {movieDuration.PadRight(10, ' ')} {moviePrice}");
-            moviesList.Sort(new MoviesComparer());
-            foreach (var movie in moviesList)
-            {
-                Console.WriteLine($"{movie.name.PadRight(50, ' ')} {movie.creator.PadRight(30, ' ')} {movie.rating}      {movie.releaseDate}      {movie.duration.PadRight(10, ' ')} {movie.price}");
-            }
-            #region Album Array
-            albums[0] = new Albums("I disagree", "Poppy", 9f, 2020, "45min", 100, 14);
-            albums[1] = new Albums("TIM", "Avicii", 10f, 2019, "38min", 100, 12);
-            albums[2] = new Albums("Dreamers", "JUNG", 7f, 2020, "33min", 100, 10);
-            albums[3] = new Albums("Doom Days", "Bastille", 8f, 2019, "40min", 100, 11);
-            albums[4] = new Albums("Väntar på en ängel", "Oskar Linnros", 6f, 2017, "39min", 100, 12);
-            albums[5] = new Albums("Är", "Snook", 6f, 2006, "41min", 100, 12);
-            albums[6] = new Albums("÷(Deluxe)", "Ed Sheeran", 7f, 2019, "59min", 100, 16);
-            albums[7] = new Albums("The Butterfly Effect", "Vargas & Lagola", 04f, 2019, "31min", 100, 11);
-            albums[8] = new Albums("CALM", "5 Seconds of Summer", 8f, 2019, "43min", 100, 13);
-            albums[9] = new Albums("Night & Day (Day Edition - Extra Tracks)", "The Vamps", 7f, 2019, "41min", 100, 12);
-            albums[10] = new Albums("IRL", "HUMAN", 8f, 2019, "38min", 100, 11);
-            albums[11] = new Albums("Prequelle", "Ghost", 7f, 2019, "41min", 100, 10);
-            albums[12] = new Albums("RAMMSTEIN", "Rammstein", 6f, 2019, "46min", 100, 11);
-            albums[13] = new Albums("Gone Now", "Bleachers", 5f, 2019, "40min", 100, 12);
-            albums[14] = new Albums("Evolve", "Imgine Dragons", 6f, 2019, "43min", 100, 12);
-            albums[15] = new Albums("Morgan Sulele", "Morgan Sulele", 4f, 2019, "23min", 100, 7);
-            albums[16] = new Albums("What If Nothing", "WALK THE MOON", 8f, 2019, "55min", 100, 13);
-            albums[17] = new Albums("COWBOY BEBOP Tank! The! best!", "SEATBELTS", 4f, 2019, "50min", 100, 12);
-            albums[18] = new Albums("You Are OK", "The Maine", 5f, 2019, "44min", 100, 10);
-            albums[19] = new Albums("Pray For The Wicked", "Panic! At The Disco", 7f, 2019, "34min", 100, 11);
-            albums[20] = new Albums("AM", "Arctic Monkeys", 6f, 2019, "41min", 100, 12);
-            albums[21] = new Albums("Seal The Deal & Let's Boogie (Deluxe)", "Volbeat", 8f, 2019, "1h 6min", 100, 17);
-            albums[22] = new Albums("Affirmation", "Savage Garden", 5f, 2019, "53min", 100, 12);
-            albums[23] = new Albums("OMG What's Happening", "Ava Max", 6f, 2019, "21min", 100, 7);
-            albums[24] = new Albums("Svart, vitt och allt därimellan", "Daniel Adams-Ray", 7f, 2019, "38min", 100, 10);
-            #endregion
-            #region Album List
-            List<Albums> albumsList = new List<Albums>();
-            albumsList.Add(new Albums("I disagree", "Poppy", 9.3f, 2020, "45min", 100, 14));
-            albumsList.Add(new Albums("TIM", "Avicii", 9.9f, 2019, "38min", 100, 12));
-            albumsList.Add(new Albums("Dreamers", "JUNG", 7.7f, 2020, "33min", 100, 10));
-            albumsList.Add(new Albums("Doom Days", "Bastille", 7.4f, 2019, "40min", 100, 11));
-            albumsList.Add(new Albums("Väntar på en ängel", "Oskar Linnros", 6.9f, 2017, "39min", 100, 12));
-            albumsList.Add(new Albums("Är", "Snook", 6.3f, 2006, "41min", 100, 12));
-            albumsList.Add(new Albums("÷(Deluxe)", "Ed Sheeran", 7.6f, 2019, "59min", 100, 16));
-            albumsList.Add(new Albums("The Butterfly Effect", "Vargas & Lagola", 5.5f, 2019, "31min", 100, 11));
-            albumsList.Add(new Albums("CALM", "5 Seconds of Summer", 7.4f, 2019, "43min", 100, 13));
-            albumsList.Add(new Albums("Night & Day (Day Edition - Extra Tracks)", "The Vamps", 7.2f, 2019, "41min", 100, 12));
-            albumsList.Add(new Albums("IRL", "HUMAN", 8.2f, 2019, "38min", 100, 11));
-            albumsList.Add(new Albums("Prequelle", "Ghost", 7.5f, 2019, "41min", 100, 10));
-            albumsList.Add(new Albums("RAMMSTEIN", "Rammstein", 6.4f, 2019, "46min", 100, 11));
-            albumsList.Add(new Albums("Gone Now", "Bleachers", 5.8f, 2019, "40min", 100, 12));
-            albumsList.Add(new Albums("Evolve", "Imgine Dragons", 7.5f, 2019, "43min", 100, 12));
-            albumsList.Add(new Albums("Morgan Sulele", "Morgan Sulele", 4.7f, 2019, "23min", 100, 7));
-            albumsList.Add(new Albums("What If Nothing", "WALK THE MOON", 8.9f, 2019, "55min", 100, 13));
-            albumsList.Add(new Albums("COWBOY BEBOP Tank! The! best!", "SEATBELTS", 4.2f, 2019, "50min", 100, 12));
-            albumsList.Add(new Albums("You Are OK", "The Maine", 7.1f, 2019, "44min", 100, 10));
-            albumsList.Add(new Albums("Pray For The Wicked", "Panic! At The Disco", 7.7f, 2019, "34min", 100, 11));
-            albumsList.Add(new Albums("AM", "Arctic Monkeys", 6.3f, 2019, "41min", 100, 12));
-            albumsList.Add(new Albums("Seal The Deal & Let's Boogie (Deluxe)", "Volbeat", 8.4f, 2019, "1h 6min", 100, 17));
-            albumsList.Add(new Albums("Affirmation", "Savage Garden", 5.8f, 2019, "53min", 100, 12));
-            albumsList.Add(new Albums("OMG What's Happening", "Ava Max", 6.6f, 2019, "21min", 100, 7));
-            albumsList.Add(new Albums("Svart, vitt och allt därimellan", "Daniel Adams-Ray", 7.8f, 2019, "38min", 100, 10));
-            #endregion
-            /*
-            Console.WriteLine();
-            Console.WriteLine("Albums");
-            Console.WriteLine("-------");
-            for (int i = 0; i < albums.Length; i++)
-            {
-                Console.WriteLine($"{albums[i].name} {albums[i].creator} {albums[i].rating} {albums[i].releaseDate} {albums[i].duration} {albums[i].price} {albums[i].numberOfSongs}");
-            }
-            */
-
-            albumsList.Sort(new AlbumComparer());
-            Console.WriteLine();
-            Console.WriteLine("Sorted Albums");
-            Console.WriteLine("-------");
-            Console.WriteLine($"{movieName.PadRight(40, ' ')} {albumArtist.PadRight(20, ' ')} {movieRating}   {movieRelease}   {movieDuration.PadRight(10, ' ')} {moviePrice}    {albumNrSongs}");
-            foreach (var album in albumsList)
-            {
-                Console.WriteLine($"{album.name.PadRight(40, ' ')} {album.creator.PadRight(20, ' ')} {album.rating}      {album.releaseDate}      {album.duration.PadRight(10, ' ')} {album.price}      {album.numberOfSongs}");
-            }
-
-            
-            /*
-            Console.WriteLine("Listsongs");
-
-            foreach(Songs aSong in songs00)
-            {
-                    Console.WriteLine($"Name: {aSong.songName} Length: {aSong.songLength}");
-            }
-            */
+            // Jagged array med låtar
+            #region Song Jagged Array
             string[][] jaggedSongArray = new string[25][];
             string[][] jaggedLengthArray = new string[25][];
             string[][] jaggedFeaturingArray = new string[25][];
-            #region Song Array info
+            
             jaggedSongArray[0] = new string[10] { "Concrete", "I Disagree", "BLOODMONEY", "Anything Like Me", "Fill The Crown", "Nothing I Need", "Sit / Stay", "Bite Your Teeth", "Sick Of The Sun", "Don't Go Outside" };
             jaggedSongArray[1] = new string[12] { "Peace Of Mind", "Heaven", "SOS", "Tough Love", "Bad Reputation", "Ain't A Thing", "Hold The Line", "Freak", "Excuse Me Mr Sir", "Heart Upon My Sleeve", "Never Leave me", "Fades Away" };
             jaggedSongArray[2] = new string[10] { "Follow Your Heart", "Falling Free", "Let Him Go", "i love you, i love you", "Giants", "Call Me Up", "These Days", "Marathon Man", "Brave", "Dreamers" };
@@ -254,174 +123,121 @@ namespace MusikButik
             jaggedLengthArray[23] = new string[7] { "3:00", "3:00", "2:42", "3:00", "3:18", "3:03", "3:07" };
             jaggedLengthArray[24] = new string[10] { "5:00", "3:13", "3:50", "3:45", "2:34", "3:45", "3:28", "4:26", "3:41", "4:41" };
             #endregion
-            #region SongsList
-            List<Songs> songs00 = new List<Songs>();
-            songs00.Add(new Songs("Concrete", "3:20"));
-            songs00.Add(new Songs("I Disagree", "3:13"));
-            songs00.Add(new Songs("BLOODMONEY", "3:03"));
-            songs00.Add(new Songs("Anything Like Me", "3:20"));
-            songs00.Add(new Songs("Fill The Crown", "3:32"));
-            songs00.Add(new Songs("Nothing I Need", "2:50"));
-            songs00.Add(new Songs("Sit / Stay", "3:54"));
-            songs00.Add(new Songs("Bite Your Teeth", "2:43"));
-            songs00.Add(new Songs("Sick Of The Sun", "3:12"));
-            songs00.Add(new Songs("Don't Go Outside", "6:06"));
-
-            List<Songs> songs01 = new List<Songs>();
-            songs01.Add(new Songs("Peace Of Mind", "3:00", "Vargas & Lagola"));
-            songs01.Add(new Songs("Heaven", "4:37"));
-            songs01.Add(new Songs("SOS", "2:37", "Aloe Blacc"));
-            songs01.Add(new Songs("Tough Love", "3:11", "Agnes, Vargas & Lagola"));
-            songs01.Add(new Songs("Bad Reputation", "3:25", "Joe Janiak"));
-            songs01.Add(new Songs("Ain't A Thing", "3:04", "Bonn"));
-            songs01.Add(new Songs("Hold The Line", "2:52", "A R I Z O N A"));
-            songs01.Add(new Songs("Freak", "2:59", "Bonn"));
-            songs01.Add(new Songs("Excuse Me Mr Sir", "3:08", "Vargas & Lagola"));
-            songs01.Add(new Songs("Heart Upon My Sleeve", "4:14", "Imagine Dragons"));
-            songs01.Add(new Songs("Never Leave Me", "2:52", "Joe Janiak"));
-            songs01.Add(new Songs("Fades Away", "2:59", "Noonie Bao"));
-
-            List<Songs> songs02 = new List<Songs>();
-            songs02.Add(new Songs("Follow Your Heart", "4:01"));
-            songs02.Add(new Songs("Falling Free", "2:41"));
-            songs02.Add(new Songs("Let Him Go", "3:35", "Clara Mae"));
-            songs02.Add(new Songs("i love you, i love you", "4:08"));
-            songs02.Add(new Songs("Giants", "3:49"));
-            songs02.Add(new Songs("Call Me Up", "2:44"));
-            songs02.Add(new Songs("These Days", "3:40"));
-            songs02.Add(new Songs("Marathon Man", "1:26"));
-            songs02.Add(new Songs("Brave", "3:42"));
-            songs02.Add(new Songs("Dreamers", "3:19"));
-
-            List<Songs> songs03 = new List<Songs>();
-            songs03.Add(new Songs("Quarter Past Midnight", "3:19"));
-            songs03.Add(new Songs("Bad Decisions", "3:10"));
-            songs03.Add(new Songs("The Waves", "4:01"));
-            songs03.Add(new Songs("Divide", "3:52"));
-            songs03.Add(new Songs("Million Pieces", "4:12"));
-            songs03.Add(new Songs("Doom Days", "2:18"));
-            songs03.Add(new Songs("Nocturnal Creatures", "3:52"));
-            songs03.Add(new Songs("4AM", "4:08"));
-            songs03.Add(new Songs("Another Place", "3:32"));
-            songs03.Add(new Songs("Those Nights", "4:30"));
-            songs03.Add(new Songs("Joy", "3:13"));
-
-            List<Songs> songs04 = new List<Songs>();
-            songs04.Add(new Songs("Väntar på en Ängel", "4:30"));
-            songs04.Add(new Songs("GåApaGå", "2:24"));
-            songs04.Add(new Songs("ÖverAllt", "3:26", "Cherrie"));
-            songs04.Add(new Songs("Bäst Like Me", "3:45"));
-            songs04.Add(new Songs("Född att slåss", "3:15"));
-            songs04.Add(new Songs("Psalm för skolgårdar", "2:53"));
-            songs04.Add(new Songs("GeGeGeGe", "3:38"));
-            songs04.Add(new Songs("Wifi", "3:20"));
-            songs04.Add(new Songs("Fri Interlude", "0:31"));
-            songs04.Add(new Songs("Fri", "4:03"));
-            songs04.Add(new Songs("Oavsett", "4:00"));
-            songs04.Add(new Songs("Ängladamm", "3:27"));
-
-            List<Songs> songs05 = new List<Songs>();
-            songs05.Add(new Songs("Är", "0:25"));
-            songs05.Add(new Songs("Kommer ifrån", "4:07"));
-            songs05.Add(new Songs("Snook, svett & tårar", "3:45"));
-            songs05.Add(new Songs("Inga Problem", "3:07"));
-            songs05.Add(new Songs("Hiphop", "1:28"));
-            songs05.Add(new Songs("Blunda", "3:10"));
-            songs05.Add(new Songs("Jag gör min grej", "5:48"));
-            songs05.Add(new Songs("Ammunition", "4:04"));
-            songs05.Add(new Songs("7 timmar", "2:49"));
-            songs05.Add(new Songs("Bejbi", "3:28"));
-            songs05.Add(new Songs("Längst fram i taxin", "3:39"));
-            songs05.Add(new Songs("Älskling jag är hemma nu", "5:27"));
-
-            List<Songs> songs06 = new List<Songs>(); // TODO
-            songs06.Add(new Songs("Concrete", "3:20"));
-            songs06.Add(new Songs("I Disagree", "3:13"));
-            songs06.Add(new Songs("BLOODMONEY", "3:03"));
-            songs06.Add(new Songs("Anything Like Me", "3:20"));
-            songs06.Add(new Songs("Fill The Crown", "3:32"));
-            songs06.Add(new Songs("Nothing I Need", "2:50"));
-            songs06.Add(new Songs("Sit / Stay", "3:54"));
-            songs06.Add(new Songs("Bite Your Teeth", "2:43"));
-            songs06.Add(new Songs("Sick Of The Sun", "3:12"));
-            songs06.Add(new Songs("Don't Go Outside", "6:06"));
-
-            List<Songs> songs07 = new List<Songs>();
-            songs07.Add(new Songs("Concrete", "3:20"));
-            songs07.Add(new Songs("I Disagree", "3:13"));
-            songs07.Add(new Songs("BLOODMONEY", "3:03"));
-            songs07.Add(new Songs("Anything Like Me", "3:20"));
-            songs07.Add(new Songs("Fill The Crown", "3:32"));
-            songs07.Add(new Songs("Nothing I Need", "2:50"));
-            songs07.Add(new Songs("Sit / Stay", "3:54"));
-            songs07.Add(new Songs("Bite Your Teeth", "2:43"));
-            songs07.Add(new Songs("Sick Of The Sun", "3:12"));
-            songs07.Add(new Songs("Don't Go Outside", "6:06"));
-
-            List<Songs> songs08 = new List<Songs>();
-            songs08.Add(new Songs("Concrete", "3:20"));
-            songs08.Add(new Songs("I Disagree", "3:13"));
-            songs08.Add(new Songs("BLOODMONEY", "3:03"));
-            songs08.Add(new Songs("Anything Like Me", "3:20"));
-            songs08.Add(new Songs("Fill The Crown", "3:32"));
-            songs08.Add(new Songs("Nothing I Need", "2:50"));
-            songs08.Add(new Songs("Sit / Stay", "3:54"));
-            songs08.Add(new Songs("Bite Your Teeth", "2:43"));
-            songs08.Add(new Songs("Sick Of The Sun", "3:12"));
-            songs08.Add(new Songs("Don't Go Outside", "6:06"));
-
+            // Lista med album
+            #region Album List
+            List<Albums> albumsList = new List<Albums>();
+            albumsList.Add(new Albums("I disagree", "Poppy", 9.3f, 2020, "45min", 100, 14, jaggedSongArray[0], jaggedFeaturingArray[0], jaggedLengthArray[0]));
+            albumsList.Add(new Albums("TIM", "Avicii", 9.9f, 2019, "38min", 100, 12, jaggedSongArray[1], jaggedFeaturingArray[1], jaggedLengthArray[1]));
+            albumsList.Add(new Albums("Dreamers", "JUNG", 7.7f, 2020, "33min", 100, 10, jaggedSongArray[2], jaggedFeaturingArray[2], jaggedLengthArray[2]));
+            albumsList.Add(new Albums("Doom Days", "Bastille", 7.4f, 2019, "40min", 100, 11, jaggedSongArray[3], jaggedFeaturingArray[3], jaggedLengthArray[3]));
+            albumsList.Add(new Albums("Väntar på en ängel", "Oskar Linnros", 6.9f, 2017, "39min", 100, 12, jaggedSongArray[4], jaggedFeaturingArray[4], jaggedLengthArray[4]));
+            albumsList.Add(new Albums("Är", "Snook", 6.3f, 2006, "41min", 100, 12, jaggedSongArray[5], jaggedFeaturingArray[5], jaggedLengthArray[5]));
+            albumsList.Add(new Albums("÷(Deluxe)", "Ed Sheeran", 7.6f, 2019, "59min", 100, 16, jaggedSongArray[6], jaggedFeaturingArray[6], jaggedLengthArray[6]));
+            albumsList.Add(new Albums("The Butterfly Effect", "Vargas & Lagola", 5.5f, 2019, "31min", 100, 11, jaggedSongArray[7], jaggedFeaturingArray[7], jaggedLengthArray[7]));
+            albumsList.Add(new Albums("CALM", "5 Seconds of Summer", 7.4f, 2019, "43min", 100, 13, jaggedSongArray[8], jaggedFeaturingArray[8], jaggedLengthArray[8]));
+            albumsList.Add(new Albums("Night & Day (Day Edition - Extra Tracks)", "The Vamps", 7.2f, 2019, "41min", 100, 12, jaggedSongArray[9], jaggedFeaturingArray[9], jaggedLengthArray[9]));
+            albumsList.Add(new Albums("IRL", "HUMAN", 8.2f, 2019, "38min", 100, 11, jaggedSongArray[10], jaggedFeaturingArray[10], jaggedLengthArray[10]));
+            albumsList.Add(new Albums("Prequelle", "Ghost", 7.5f, 2019, "41min", 100, 10, jaggedSongArray[11], jaggedFeaturingArray[11], jaggedLengthArray[11]));
+            albumsList.Add(new Albums("RAMMSTEIN", "Rammstein", 6.4f, 2019, "46min", 100, 11, jaggedSongArray[12], jaggedFeaturingArray[12], jaggedLengthArray[12]));
+            albumsList.Add(new Albums("Gone Now", "Bleachers", 5.8f, 2019, "40min", 100, 12, jaggedSongArray[13], jaggedFeaturingArray[13], jaggedLengthArray[13]));
+            albumsList.Add(new Albums("Evolve", "Imgine Dragons", 7.5f, 2019, "43min", 100, 12, jaggedSongArray[14], jaggedFeaturingArray[14], jaggedLengthArray[14]));
+            albumsList.Add(new Albums("Morgan Sulele", "Morgan Sulele", 4.7f, 2019, "23min", 100, 7, jaggedSongArray[15], jaggedFeaturingArray[15], jaggedLengthArray[15]));
+            albumsList.Add(new Albums("What If Nothing", "WALK THE MOON", 8.9f, 2019, "55min", 100, 13, jaggedSongArray[16], jaggedFeaturingArray[16], jaggedLengthArray[16]));
+            albumsList.Add(new Albums("COWBOY BEBOP Tank! The! best!", "SEATBELTS", 4.2f, 2019, "50min", 100, 12, jaggedSongArray[17], jaggedFeaturingArray[17], jaggedLengthArray[17]));
+            albumsList.Add(new Albums("You Are OK", "The Maine", 7.1f, 2019, "44min", 100, 10, jaggedSongArray[18], jaggedFeaturingArray[18], jaggedLengthArray[18]));
+            albumsList.Add(new Albums("Pray For The Wicked", "Panic! At The Disco", 7.7f, 2019, "34min", 100, 11, jaggedSongArray[19], jaggedFeaturingArray[19], jaggedLengthArray[19]));
+            albumsList.Add(new Albums("AM", "Arctic Monkeys", 6.3f, 2019, "41min", 100, 12, jaggedSongArray[20], jaggedFeaturingArray[20], jaggedLengthArray[20]));
+            albumsList.Add(new Albums("Seal The Deal & Let's Boogie (Deluxe)", "Volbeat", 8.4f, 2019, "1h 6min", 100, 17, jaggedSongArray[21], jaggedFeaturingArray[21], jaggedLengthArray[21]));
+            albumsList.Add(new Albums("Affirmation", "Savage Garden", 5.8f, 2019, "53min", 100, 12, jaggedSongArray[22], jaggedFeaturingArray[22], jaggedLengthArray[22]));
+            albumsList.Add(new Albums("OMG What's Happening", "Ava Max", 6.6f, 2019, "21min", 100, 7, jaggedSongArray[23], jaggedFeaturingArray[23], jaggedLengthArray[23]));
+            albumsList.Add(new Albums("Svart, vitt och allt därimellan", "Daniel Adams-Ray", 7.8f, 2019, "38min", 100, 10, jaggedSongArray[24], jaggedFeaturingArray[24], jaggedLengthArray[24]));
             #endregion
-            AlbumSongs();
-            void AlbumSongs()
-            {
-                int albumToBrowse = -1;
-                bool inputCheck = false;
-                Console.WriteLine();
-                Console.WriteLine("Which album would you like to browse?");
-                for (int i = 0; i < albums.Length; i++)
-                {
-                    Console.WriteLine($"{i}: {albums[i].name}");
-                }
-                while(inputCheck == false) 
-                { 
-                    string inputAlbumToBrowseCheck = Console.ReadLine();
-                    inputAlbumToBrowseCheck.Trim();
-                    try
-                    {
-                        albumToBrowse = Convert.ToInt32(inputAlbumToBrowseCheck);
-                        inputCheck = true;
-                    }
-                    catch
-                    {
-                        Console.WriteLine("Input invalid. Please type the corresponding number for the album you would like to browse");
-                    }
-                }
-                Console.WriteLine($"You chose: {albums[albumToBrowse].name}");
+            
+            // Välkommnar användaren till butiken och informerar om utbudet
+            Console.WriteLine("Välkommen till Hans-Johnnys butik!");
+            Console.WriteLine("Här har vi 25 unika filmer och 25 unika album");
+            Console.WriteLine("Och bäst av allt. Varje produkt kostar endast 100 kr!");
 
-                Console.WriteLine($"{albumToBrowse}) {albums[albumToBrowse].name}");
-                string[] individualSongArray = jaggedSongArray[albumToBrowse];
-                string[] individualSongLengthArray = jaggedLengthArray[albumToBrowse];
-                string[] individualSongFeaturingArray = jaggedFeaturingArray[albumToBrowse];
-                
-                for (int i = 0; i < jaggedSongArray[albumToBrowse].Length; i++)
+            // While loop for att köra menyn
+            while(menuRun == true)
+            {
+                // Meny text
+                Console.ReadKey();
+                Console.WriteLine();
+                Console.WriteLine("Meny");
+                Console.WriteLine("0) Skriv ut filmer");
+                Console.WriteLine("1) Skriv ut album");
+                Console.WriteLine("2) Skriv ut låtar i specifikt album");
+                Console.WriteLine("3) Skriv ut all låtar");
+                Console.WriteLine("4) Skriv ut adresser");
+                Console.WriteLine("5) Rensa konsolen");
+                Console.WriteLine("6) Avsluta program");
+                // Variabel för användar inmatning
+                int input = 0;
+                // Try-catch för att ta in användar inmatning utan att programmet kraschar ifall det skulle gå snett
+                try
                 {
-                    try 
-                    {
-                        if (individualSongFeaturingArray[i] == null)
-                        {
-                           Console.WriteLine($"{i}) {individualSongArray[i]} {individualSongLengthArray[i]}");
-                        }
-                        else
-                        {
-                                Console.WriteLine($"{i}) {individualSongArray[i]} featuring {individualSongFeaturingArray[i]} {individualSongLengthArray[i]}");
-                        }
-                    }
-                    catch
-                    {
-                       continue;
-                    }
+                    // Tar in användar inmatningen
+                    string menuInput = Console.ReadLine();
+                    // Trimmar fram och bak för att det inte ska bli fel om användaren råkat få med ett mallanslag
+                    menuInput.Trim();
+                    // försöker konvertera användar inmatningen till en integer
+                    input = Convert.ToInt32(menuInput);
                 }
+                // Informerar användaren om att det blivit fel och ber den att mata in ett värde mellan 0 och 6
+                catch
+                {
+                    Console.WriteLine("Felaktig inmatning. Mata in 0-6");
+                }
+                // Använder inmatningen i en switch case sats för att köra koden för den funktion användaren valt
+                switch (input)
+                {
+                    case 0:
+                        // Kallar på print movies metoden och för med listan med filmer
+                        Movies.Print(moviesList);
+                        break;
+                    case 1:
+                        // Kallar på print albums metoden och för med listan med album
+                        Albums.Print(albumsList);
+                        break;
+                    case 2:
+                        {
+                            // Kallar på metod för att få ut vilket album användaren vill kolla på
+                            // Resultatet av metoden lagras i en variabel
+                            int browse = Albums.PrintSongsSpecificAlbum(albumsList);
+                            // Variabeln används för att skriva ut låtar på valt album
+                            albumsList[browse].PrintSongs();
+                        }
+                        break;
+                    case 3:
+                        // For loop som går genom alla album och skriver ut låtarna
+                        for (int i = 0; i < albumsList.Count; i++)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine(albumsList[i].name);
+                            albumsList[i].PrintSongs();
+                        }
+                        break;
+                    case 4:
+                        // Kallar på metod för att skriva ut adresser
+                        myButik.PrintAdress();
+                        break;
+                    case 5:
+                        // Rensar upp i konsolen 
+                        Console.Clear();
+                        break;
+                    case 6:
+                        // Sätter bool variabeln till false och därmed avslutar loopen som kör menyn
+                        menuRun = false;
+                        break;
+                    default:
+                        // fångar upp värden som avviker från valen som finns
+                        Console.WriteLine("Felaktig inmatning. Mata in 0-6");
+                        break;
+                }
+
             }
+            Console.WriteLine("Välkommen åter");
         }
     }
 }

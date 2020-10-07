@@ -38,12 +38,12 @@ namespace MusikButik
             Console.WriteLine("Movies");
             Console.WriteLine("-------");
             // Paddar strängarna så att allting ligger symmetriskt när det skrivs ut på skärmen
-            Console.WriteLine($"{movieName.PadRight(50, ' ')} {movieDirector.PadRight(30, ' ')} {movieRating}   {movieRelease}↓  {movieDuration.PadRight(10, ' ')} {moviePrice}");
+            Console.WriteLine($"{movieName.PadRight(50)} {movieDirector.PadRight(30)} {movieRating}   {movieRelease}↓  {movieDuration.PadRight(10)} {moviePrice}");
             list.Sort(new MoviesComparer());
             // Foreach loop for att skriva ut varje film i listan
             foreach (var movie in list)
             {
-                Console.WriteLine($"{movie.name.PadRight(50, ' ')} {movie.creator.PadRight(30, ' ')} {movie.rating}      {movie.releaseDate}      {movie.duration.PadRight(10, ' ')} {movie.price}");
+                Console.WriteLine($"{movie.name.PadRight(50)} {movie.creator.PadRight(30)} {movie.rating}      {movie.releaseDate}      {movie.duration.PadRight(10)} {movie.price}");
             }
         }
     }

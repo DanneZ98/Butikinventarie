@@ -64,11 +64,11 @@ namespace MusikButik
             Console.WriteLine("Albums");
             Console.WriteLine("-------");
             // Paddar strängarna så att det är symmetriskt när det skrivs ut
-            Console.WriteLine($"{albumName.PadRight(40, ' ')} {albumArtist.PadRight(20, ' ')} {albumRating}↓  {albumRelease}   {albumDuration.PadRight(10, ' ')} {albumPrice}    {albumNrSongs}");
+            Console.WriteLine($"{albumName.PadRight(40)} {albumArtist.PadRight(20)} {albumRating}↓  {albumRelease}   {albumDuration.PadRight(10)} {albumPrice}    {albumNrSongs}");
             // Foreach loop för att skriva ut alla album i listan med album och skriver ut värdena
             foreach (var album in list)
             {
-                Console.WriteLine($"{album.name.PadRight(40, ' ')} {album.creator.PadRight(20, ' ')} {album.rating}      {album.releaseDate}      {album.duration.PadRight(10, ' ')} {album.price}      {album.numberOfSongs}");
+                Console.WriteLine($"{album.name.PadRight(40)} {album.creator.PadRight(20)} {album.rating}      {album.releaseDate}      {album.duration.PadRight(10)} {album.price}      {album.numberOfSongs}");
             }
         }
         // Metod som väljer ett album att skriva ut låtar till

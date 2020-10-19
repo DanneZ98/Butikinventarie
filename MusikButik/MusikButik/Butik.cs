@@ -11,6 +11,7 @@ namespace MusikButik
         // Metod för att skriva ut adresserna
         static public void PrintAdress()
         {
+            Console.WriteLine();
             Console.WriteLine("Fakurerings Adress: " + faktureringsAdress);
             Console.WriteLine("Besöks Adress: " + besöksAdress);
         }

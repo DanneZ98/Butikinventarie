@@ -23,6 +23,7 @@ namespace MusikButik
             duration = _duration;
             price = _price;
         }
+
         // Metod som skriver ut alla filmer i listan som skickas med när man kallar på metoden
         public static void Print(List<Movie> list)
         {
@@ -46,6 +47,7 @@ namespace MusikButik
                 Console.WriteLine($"{movie.name.PadRight(50)} {movie.creator.PadRight(30)} {movie.rating}      {movie.releaseDate}      {movie.duration.PadRight(10)} {movie.price}");
             }
         }
+
         public static List<Movie> GetMovies()
         {
             // Lista med filmer

@@ -27,6 +27,7 @@ namespace MusikButik
             songFeat = _songFeat;
             songLength = _songLength;
         }
+
         // Metod för att skriva ut alla låtar i ett album
         public void PrintSongs()
         {
@@ -37,17 +38,20 @@ namespace MusikButik
                 if (songFeat[i] == null)
                 {
                     // Skriver ut låtnamn och längd på låten
-                    Console.WriteLine($"{songName[i].PadRight(100)} {songLength[i]}");
+                    // Paddar texten så det är symmetriskt
+                    Console.WriteLine($"{songName[i],-100} {songLength[i]}");
                 }
                 else
                 {
                     // Skriver ut låtnamn, featuring artist och längd på låten
-                    Console.Write($"{songName[i].PadRight(50)}");
-                    Console.Write($"featuring {songFeat[i].PadRight(41)}");
+                    // Paddar texten så det är symmetriskt
+                    Console.Write($"{songName[i],-50}");
+                    Console.Write($"featuring {songFeat[i],-41}");
                     Console.Write($"{songLength[i]}\n");
                 }
             }
         }
+
         // Metod som tar in en lista av typen album
         public static void Print(List<Album> list)
         {
@@ -66,13 +70,14 @@ namespace MusikButik
             Console.WriteLine("Albums");
             Console.WriteLine("-------");
             // Paddar strängarna så att det är symmetriskt när det skrivs ut
-            Console.WriteLine($"{albumName.PadRight(40)} {albumArtist.PadRight(20)} {albumRating}↓  {albumRelease}   {albumDuration.PadRight(10)} {albumPrice}    {albumNrSongs}");
+            Console.WriteLine($"{albumName,-40} {albumArtist,-20} {albumRating}↓  {albumRelease}   {albumDuration,-10} {albumPrice}    {albumNrSongs}");
             // Foreach loop för att skriva ut alla album i listan med album och skriver ut värdena
             foreach (var album in list)
             {
-                Console.WriteLine($"{album.name.PadRight(40)} {album.creator.PadRight(20)} {album.rating}      {album.releaseDate}      {album.duration.PadRight(10)} {album.price}      {album.numberOfSongs}");
+                Console.WriteLine($"{album.name,-40} {album.creator,-20} {album.rating}      {album.releaseDate}      {album.duration,-10} {album.price}      {album.numberOfSongs}");
             }
         }
+
         // Metod som väljer ett album att skriva ut låtar till
         // Returnerar en int och för med en lista i anropet
         public static int PrintSongsSpecificAlbum(List<Album> albumsList)

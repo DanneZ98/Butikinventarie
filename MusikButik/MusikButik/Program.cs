@@ -17,8 +17,18 @@ namespace MusikButik
             bool menuRun = true;
             while (menuRun == true)
             {
-                // Anropar metod som skriver ut meny text
-                MenuOptions();
+                // Meny text
+                Console.ReadKey();
+                Console.WriteLine();
+                Console.WriteLine("Meny");
+                Console.WriteLine("------");
+                Console.WriteLine("1) Skriv ut filmer");
+                Console.WriteLine("2) Skriv ut album");
+                Console.WriteLine("3) Skriv ut låtar i specifikt album");
+                Console.WriteLine("4) Skriv ut all låtar");
+                Console.WriteLine("5) Skriv ut adresser");
+                Console.WriteLine("6) Rensa konsolen");
+                Console.WriteLine("0) Avsluta program");
 
                 // Variabel för användar inmatning
                 int input = 0;
@@ -50,22 +60,6 @@ namespace MusikButik
             Console.WriteLine("Välkommen åter");
         }
 
-        public static void MenuOptions()
-        {
-            // Meny text
-            Console.ReadKey();
-            Console.WriteLine();
-            Console.WriteLine("Meny");
-            Console.WriteLine("------");
-            Console.WriteLine("1) Skriv ut filmer");
-            Console.WriteLine("2) Skriv ut album");
-            Console.WriteLine("3) Skriv ut låtar i specifikt album");
-            Console.WriteLine("4) Skriv ut all låtar");
-            Console.WriteLine("5) Skriv ut adresser");
-            Console.WriteLine("6) Rensa konsolen");
-            Console.WriteLine("0) Avsluta program");
-        }
-
         public static bool Menu(int input, bool menuRun)
         {
             // Använder inmatningen i en switch case sats för att köra koden för den funktion användaren valt
@@ -84,21 +78,16 @@ namespace MusikButik
                         // Kallar på metod för att få ut vilket album användaren vill kolla på
                         // Resultatet av metoden lagras i en variabel
                         int browse = Album.PrintSongsSpecificAlbum(Album.GetAlbums());
-                        // Variabeln används för att skriva ut låtar på valt album
-                        Album.GetAlbums()[browse].PrintSongs();
+                        // Anropar metod som skriver ut låtarna i specifikt album
+                        PrintSongs(browse);
                     }
                     break;
                 case 4:
                     // For loop som går genom alla album och skriver ut låtarna
                     for (int i = 0; i < Album.GetAlbums().Count; i++)
                     {
-                        Console.WriteLine();
-                        // Skriver ut namnet på albumet
-                        Console.WriteLine(Album.GetAlbums()[i].name);
-                        // Skriver ut en linje under namnet på albumet som är lika långt som namnet
-                        Console.WriteLine("".PadRight(Album.GetAlbums()[i].name.Length, '-'));
-                        // Anropar metod som skriver ut låtarna på albumet
-                        Album.GetAlbums()[i].PrintSongs();
+                        // Anropar metod som skriver ut låtarna i specifikt album
+                        PrintSongs(i);
                     }
                     break;
                 case 5:
@@ -119,6 +108,17 @@ namespace MusikButik
                     break;
             }
             return menuRun;
+        }
+
+        public static void PrintSongs(int i)
+        {
+            Console.WriteLine();
+            // Skriver ut namnet på albumet
+            Console.WriteLine(Album.GetAlbums()[i].name);
+            // Skriver ut en linje under namnet på albumet som är lika långt som namnet
+            Console.WriteLine("".PadRight(Album.GetAlbums()[i].name.Length, '-'));
+            // Anropar metod som skriver ut låtarna på albumet
+            Album.GetAlbums()[i].PrintSongs();
         }
     }
 }

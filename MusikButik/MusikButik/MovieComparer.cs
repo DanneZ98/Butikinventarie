@@ -3,10 +3,10 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace MusikButik
 {
-    class MoviesComparer : IComparer<Movies>
+    class MovieComparer : IComparer<Movie>
     {
         // Jämför releaseDate med varandra och sorterar listan efter senaste releasen
-        public int Compare([AllowNull] Movies x, [AllowNull] Movies y)
+        public int Compare([AllowNull] Movie x, [AllowNull] Movie y)
         {
             if (x == null && y == null) return 0;
             if (x == null) return 1;

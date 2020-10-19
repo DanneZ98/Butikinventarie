@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Danne\\Source\\Repos\\Butik\\MusikButik\\MusikButik\\MusikButik.csproj": {}
+    "C:\\Users\\Danne\\source\\repos\\Butik\\MusikButik\\MusikButik\\MusikButik.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Danne\\Source\\Repos\\Butik\\MusikButik\\MusikButik\\MusikButik.csproj": {
+    "C:\\Users\\Danne\\source\\repos\\Butik\\MusikButik\\MusikButik\\MusikButik.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Danne\\Source\\Repos\\Butik\\MusikButik\\MusikButik\\MusikButik.csproj",
+        "projectUniqueName": "C:\\Users\\Danne\\source\\repos\\Butik\\MusikButik\\MusikButik\\MusikButik.csproj",
         "projectName": "MusikButik",
-        "projectPath": "C:\\Users\\Danne\\Source\\Repos\\Butik\\MusikButik\\MusikButik\\MusikButik.csproj",
+        "projectPath": "C:\\Users\\Danne\\source\\repos\\Butik\\MusikButik\\MusikButik\\MusikButik.csproj",
         "packagesPath": "C:\\Users\\Danne\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Danne\\Source\\Repos\\Butik\\MusikButik\\MusikButik\\obj\\",
+        "outputPath": "C:\\Users\\Danne\\source\\repos\\Butik\\MusikButik\\MusikButik\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Danne\\AppData\\Roaming\\NuGet\\NuGet.Config",

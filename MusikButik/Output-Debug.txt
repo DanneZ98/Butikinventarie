@@ -1,0 +1,9 @@
+﻿'MusikButik.exe' (CoreCLR: DefaultDomain): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Private.CoreLib.dll'. 
+'MusikButik.exe' (CoreCLR: clrhost): Loaded 'C:\Users\Danne\source\repos\Butik\MusikButik\MusikButik\bin\Debug\netcoreapp3.1\MusikButik.dll'. Symbols loaded.
+'MusikButik.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Runtime.dll'. 
+'MusikButik.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Console.dll'. 
+'MusikButik.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Runtime.Extensions.dll'. 
+'MusikButik.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Threading.dll'. 
+'MusikButik.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Text.Encoding.Extensions.dll'. 
+'MusikButik.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Collections.dll'. 
+The program '[21484] MusikButik.exe' has exited with code -1073741510 (0xc000013a).

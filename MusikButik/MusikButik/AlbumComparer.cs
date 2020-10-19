@@ -3,10 +3,10 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace MusikButik
 {
-    class AlbumComparer : IComparer<Albums>
+    class AlbumComparer : IComparer<Album>
     {
         // Jämför rating med varandra och sorterar listan efter högsta ratingen
-        public int Compare([AllowNull] Albums x, [AllowNull] Albums y)
+        public int Compare([AllowNull] Album x, [AllowNull] Album y)
         {
 
             if (x == null && y == null) return 0;

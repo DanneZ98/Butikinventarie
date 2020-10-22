@@ -5,7 +5,7 @@ namespace MusikButik
 {
     class Movie
     {
-        // Fält
+        // Fält för filmer
         public string name;
         public string creator;
         public float rating;
@@ -13,7 +13,7 @@ namespace MusikButik
         public string duration;
         public int price;
 
-        // Konstruktor
+        // Konstruktor för filmer
         public Movie(string _name, string _creator, float _rating, int _releaseDate, string _duration, int _price)
         {
             name = _name;
@@ -39,15 +39,16 @@ namespace MusikButik
             Console.WriteLine("Movies");
             Console.WriteLine("-------");
             // Paddar strängarna så att allting ligger symmetriskt när det skrivs ut på skärmen
-            Console.WriteLine($"{movieName.PadRight(50)} {movieDirector.PadRight(30)} {movieRating}   {movieRelease}↓  {movieDuration.PadRight(10)} {moviePrice}");
+            Console.WriteLine($"{movieName,-50} {movieDirector,-30} {movieRating,-8} {movieRelease}↓  {movieDuration,-10} {moviePrice}");
             list.Sort(new MovieComparer());
             // Foreach loop for att skriva ut varje film i listan
             foreach (var movie in list)
             {
-                Console.WriteLine($"{movie.name.PadRight(50)} {movie.creator.PadRight(30)} {movie.rating}      {movie.releaseDate}      {movie.duration.PadRight(10)} {movie.price}");
+                // Paddar variablerna så att de ligger symmertriskt när det skrivs ut på skärmen
+                Console.WriteLine($"{movie.name,-50} {movie.creator,-30} {movie.rating,-8} {movie.releaseDate,-7}   {movie.duration,-10} {movie.price}");
             }
         }
-
+        // Metod som returnerar en lista med filmer
         public static List<Movie> GetMovies()
         {
             // Lista med filmer
@@ -80,6 +81,7 @@ namespace MusikButik
                 new Movie("Wolf Children", "Mamoru Hosoda", 8.1f, 2012, "1h 57min", 100)
             };
 
+            // Returnerar en lista med filmer
             return moviesList;
         }
     }

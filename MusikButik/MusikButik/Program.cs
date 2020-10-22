@@ -4,7 +4,7 @@ namespace MusikButik
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             // Ändrar titeln på konsolen till något passande
             Console.Title = "Hans Johnnys Musik och Film Butik";
@@ -30,10 +30,24 @@ namespace MusikButik
                 Console.WriteLine("6) Rensa konsolen");
                 Console.WriteLine("0) Avsluta program");
 
+                // Anropar metod för användarinmatning och lagrar resultatet i en int variabel
+                int input = GetUserInput(0, 6);
+                // Anropar metod för att köra menyn och lagrar resultatet i bool variabeln som styr om menyn ska avslutas eller inte. 
+                menuRun = Menu(input, menuRun);
+            }
+
+            Console.WriteLine("Välkommen åter");
+        }
+        // Metod för användarinmatning
+        public static int GetUserInput(int min, int max)
+        {
+            int output = -1;
+            bool acceptedInput = false;
+            while (acceptedInput == false)
+            {
                 // Variabel för användar inmatning
-                int input = 0;
+                int input = -1;
                 // Variabel för att kolla så att inmatningen är korrekt innan loopen anropar nästa steg
-                bool isInputCorrect;
                 // Try-catch för att ta in användar inmatning utan att programmet kraschar ifall det skulle gå snett
                 try
                 {
@@ -43,23 +57,27 @@ namespace MusikButik
                     menuInput.Trim();
                     // försöker konvertera användar inmatningen till en integer
                     input = Convert.ToInt32(menuInput);
-                    isInputCorrect = true;
                 }
-                // Informerar användaren om att det blivit fel och ber den att mata in ett värde mellan 0 och 6
+                // Informerar användaren om att det blivit fel och ber den att mata in ett värde mellan min och max
                 catch
                 {
-                    Console.WriteLine("Felaktig inmatning. Mata in 0-6");
-                    isInputCorrect = false;
+                    Console.WriteLine($"Felaktig inmatning. Mata in {min}-{max}");
                 }
-                // Anropar metod för meny om det inmatade värdet är okej
-                if (isInputCorrect == true)
-                    // Sätter menuRun till bool värdet som metoden returnerar för att kontrollera om användaren vill avsluta programmet
-                    menuRun = Menu(input, menuRun);
+
+                // Kollar att det inmatade värdet är mellan parametrarna
+                if (input >= min && input <= max)
+                {
+                    output = input;
+                    acceptedInput = true;
+                }
+                else
+                    acceptedInput = false;
             }
 
-            Console.WriteLine("Välkommen åter");
+            // returnerar det inmatade värdet efter det har gått igenom felhanteringen
+            return output;
         }
-
+        // Metod för att köra menyn
         public static bool Menu(int input, bool menuRun)
         {
             // Använder inmatningen i en switch case sats för att köra koden för den funktion användaren valt

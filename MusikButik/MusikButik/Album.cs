@@ -69,8 +69,10 @@ namespace MusikButik
             Console.WriteLine();
             Console.WriteLine("Albums");
             Console.WriteLine("-------");
+
             // Paddar strängarna så att det är symmetriskt när det skrivs ut
             Console.WriteLine($"{albumName,-40} {albumArtist,-20} {albumRating}↓  {albumRelease}   {albumDuration,-10} {albumPrice}    {albumNrSongs}");
+
             // Foreach loop för att skriva ut alla album i listan med album och skriver ut värdena
             foreach (var album in list)
             {
@@ -82,10 +84,6 @@ namespace MusikButik
         // Returnerar en int och för med en lista i anropet
         public static int PrintSongsSpecificAlbum(List<Album> albumsList)
         {
-            // Integer för vilket album som användaren väljer
-            int albumToBrowse = 0;
-            // Bool variabel för while loppen
-            bool inputCheck = false;
             Console.WriteLine();
             Console.WriteLine("Vilket album vill du kolla på?");
             // Skriver ut alla album med en for loop
@@ -93,38 +91,15 @@ namespace MusikButik
             {
                 Console.WriteLine($"{i}: {albumsList[i].name}");
             }
-            // While loop som fortsätter programmet och låter användaren välja om ifall den skriver fel
-            while (inputCheck == false)
-            {
-                // Lagrar användar inmatningen i en sträng variabel och trimmar den
-                string inputAlbumToBrowseCheck = Console.ReadLine();
-                inputAlbumToBrowseCheck.Trim();
-                // try-catch sats för 
-                try
-                {
-                    // att konvertera inmatningen till en int
-                    albumToBrowse = Convert.ToInt32(inputAlbumToBrowseCheck);
-                    // If sats för att kontrollera att värdet är mellan 0 och 24
-                    if (albumToBrowse > -1 && albumToBrowse < 25)
-                        // Avslutar while loopen ifall värdet är okej
-                        inputCheck = true;
-                    else
-                        // Informerar användaren att inmatningen är inkorrekt och ber den att mata in ett värde mellan 0 och 24
-                        Console.WriteLine("Felaktig inmatning. Mata in 0-24");
-                }
-                catch
-                {
-                    // Informerar användaren att inmatningen är inkorrekt och ber den att mata in ett värde mellan 0 och 24
-                    Console.WriteLine("Felaktig inmatning. Mata in 0-24");
-                }
-            }
-            // returnerar ett int värde mellan 0 och 24
+            // Anropar metoden för användarinmatning och lagrar resultatet i en int variabel
+            int albumToBrowse = Program.GetUserInput(0, 24);
+            // returnerar int variabeln 
             return albumToBrowse;
         }
 
         public static List<Album> GetAlbums()
         {
-            // Lista med alla låtar
+            // Jagged arrays med alla låtar
             #region Song info
             string[][] jaggedSongArray = new string[25][];
             string[][] jaggedLengthArray = new string[25][];
@@ -215,7 +190,7 @@ namespace MusikButik
             new Album("TIM", "Avicii", 9.9f, 2019, "38min", 100, 12, jaggedSongArray[1], jaggedFeaturingArray[1], jaggedLengthArray[1]),
             new Album("Dreamers", "JUNG", 7.7f, 2020, "33min", 100, 10, jaggedSongArray[2], jaggedFeaturingArray[2], jaggedLengthArray[2]),
             new Album("Doom Days", "Bastille", 7.4f, 2019, "40min", 100, 11, jaggedSongArray[3], jaggedFeaturingArray[3], jaggedLengthArray[3]),
-            new Album("Väntar på en ängel", "Oskar Linnros", 6.9f, 2017, "39min", 100, 12, jaggedSongArray[4], jaggedFeaturingArray[4], jaggedLengthArray[4]),
+            new Album("Väntar på en Ängel", "Oskar Linnros", 6.9f, 2017, "39min", 100, 12, jaggedSongArray[4], jaggedFeaturingArray[4], jaggedLengthArray[4]),
             new Album("Är", "Snook", 6.3f, 2006, "41min", 100, 12, jaggedSongArray[5], jaggedFeaturingArray[5], jaggedLengthArray[5]),
             new Album("÷(Deluxe)", "Ed Sheeran", 7.6f, 2019, "59min", 100, 16, jaggedSongArray[6], jaggedFeaturingArray[6], jaggedLengthArray[6]),
             new Album("The Butterfly Effect", "Vargas & Lagola", 5.5f, 2019, "31min", 100, 11, jaggedSongArray[7], jaggedFeaturingArray[7], jaggedLengthArray[7]),
@@ -237,7 +212,8 @@ namespace MusikButik
             new Album("OMG What's Happening", "Ava Max", 6.6f, 2019, "21min", 100, 7, jaggedSongArray[23], jaggedFeaturingArray[23], jaggedLengthArray[23]),
             new Album("Svart, vitt och allt därimellan", "Daniel Adams-Ray", 7.8f, 2019, "38min", 100, 10, jaggedSongArray[24], jaggedFeaturingArray[24], jaggedLengthArray[24])
             };
-        
+
+            // Returnerar en lista med album
             return albumsList;
         }
     }
